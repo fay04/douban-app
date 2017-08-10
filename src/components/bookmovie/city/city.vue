@@ -1,12 +1,1 @@
-<template>
-  <div>
-   city
-  </div>
-</template>
-
-<script type="text/ecmascript-6">
-</script>
-
-<style lang="scss">
- 
-</style>
+意外错误。未能在撤销／重做时从本地历史记录复原文件内容。

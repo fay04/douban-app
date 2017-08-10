@@ -30,7 +30,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
  .movie-item {
  	width: 96px;
 	.title {

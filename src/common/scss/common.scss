@@ -83,3 +83,18 @@ body {
 .active {
     color: #3cbe51;
 }
+.fl {
+    float: left;
+}
+.fr {
+    float: right
+}
+input {
+    -webkit-appearance:none;
+    border: none;
+    outline: none;
+}
+input::hover, input::active,input:focus {
+    border: none;
+    outline: none;
+}

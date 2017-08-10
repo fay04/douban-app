@@ -50,7 +50,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	@import '../../common/scss/variable.scss';
 	@import '../../common/scss/icon.scss';
 	@import '../../common/scss/common.scss';

@@ -2,12 +2,15 @@
   <div class="m-movie">
    <div class="title-wrapper">
   		<h2 class="title">{{moviesM.title}}</h2>
-  		<div class="more-btn" @click="selectMoreMovies">
-  			更多
+  		<router-link :to="'/bookmovie/movie/buymovie/' + moviesM.type" class="more-btn">
+		   			更多
   			<svg class="icon" aria-hidden="true">
 		      <use xlink:href="#icon-keyboard_arrow_right"></use>
 		    </svg>
-  		</div>
+		  </router-link>
+  		<!--<div  @click="selectMoreMovies" >
+  			
+  		</div>-->
   	</div>
   	<div ref="moviesWrapper" class="movies-scroll" v-show="movies.subjects">
   		<div class="movies-wrapper" ref="movieList">
@@ -23,7 +26,6 @@
 	  		</div>
   		</div>
   	</div>
-  	<movies></movies>
   </div>
 </template>
 
@@ -31,6 +33,7 @@
 	import movieitem from './movie-item.vue'
 	import { emit } from '../../../common/js/emit.js'
 	import BScroll from 'better-scroll'
+  import {mHotMovies,mComingMovies} from '../../../service/getData'
 	
 	export default {
 		data() {
@@ -39,18 +42,16 @@
 			}
 		},
 		created() {
-			if (this.moviesM && this.moviesM.url) {
+			/*if (this.moviesM && this.moviesM.url) {
 				this.$http.jsonp(this.moviesM.url).then((response) => {
-					console.log(response)
 				  if (response.status === 200) {
 				  	let movies = response.data
-				  	console.log(movies)
 						this.movies = movies
 						this._initMoviesList()
 						emit.$emit('initscroll', {})
 					}
 				})
-			}
+			}*/
 		},
 		props: {
 			moviesM: {
@@ -75,20 +76,31 @@
 						}
 				 	})
 				 }
-			},
-			selectMoreMovies() {
-				console.log(this.moviesM.type)
 			}
 		},
+		mounted () {
+			let currentMovie;
+			if(this.moviesM.type === 1) {
+				currentMovie = mComingMovies
+			}else {
+				currentMovie = mHotMovies
+			}
+			
+				currentMovie().then(res => {
+            let movies = res
+						this.movies = movies
+						this._initMoviesList()
+						emit.$emit('initscroll', {})
+        })
+        
+    },
 		components: {
 			movieitem
-		},
-		mounted() {
 		}
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	@import '../../../common/scss/variable.scss';
 	@import '../../../common/scss/common.scss';
 	

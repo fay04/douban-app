@@ -10,6 +10,7 @@
 				<h1 class="title">精选榜单</h1>
 			</div>
 		</div>
+  		<router-view name="buymovie"></router-view>
 	</div>
 </template>
 
@@ -18,6 +19,7 @@
 	import split from '../../common/split.vue'
 	import BScroll from 'better-scroll'
 	import mmovie from './mmovie.vue'
+    import movies from './movies.vue'
 
 	export default {
 		data() {
@@ -30,12 +32,14 @@
 					'title': '院线即将上映',
 					'url': 'https://api.douban.com/v2/movie/coming_soon',
 					'type': 1
-				}]
+				}],
+				type: 1
 			}
 		},
 		components: {
 			mmovie,
-			split
+			split,
+			movies
 		},
 		created() {
 			emit.$on('initscroll', this._initScroll)
@@ -59,7 +63,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.movie {
 		position: fixed;
 		top: 96px;
@@ -69,7 +73,6 @@
 		z-index: 2;
 		background: #fff;
 		transform: translate(0, 0, 0);
-		overflow: hidden;
 		.billboard-list {
 			padding: 18px;
 			.title {
