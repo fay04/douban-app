@@ -1,6 +1,6 @@
 <template>
   <div>
-   tv
+   fair
   </div>
 </template>
 

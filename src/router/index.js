@@ -7,7 +7,7 @@ import bookmovie from '@/components/bookmovie/bookmovie'
 import movie from '@/components/bookmovie/movie/movie'
 import buymovie from '@/components/bookmovie/movie/movies.vue'
 import book from '@/components/bookmovie/book/book'
-import tv from '@/components/bookmovie/tv/tv'
+import fair from '@/components/bookmovie/fair/fair'
 import city from '@/components/bookmovie/city/city' //同城
 import selectcity from '@/common/vue/selectCity'
 import music from '@/components/bookmovie/music/music'
@@ -57,8 +57,8 @@ export default new Router({
 					component: book
 				},
 				{
-					path: 'tv',
-					component: tv
+					path: 'fair',
+					component: fair
 				},
 				{
 					path: 'city',

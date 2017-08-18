@@ -21,8 +21,8 @@
    			</router-link>
    		</div>
    		<div class="nav-item">
-	   		<router-link to="/bookmovie/tv">
-		   		电视
+	   		<router-link to="/bookmovie/fair">
+		   		市集
 	   		</router-link>
 	   	</div>
 	   	<div class="nav-item">

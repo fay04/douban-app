@@ -18,6 +18,9 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+	plugins:[
+		new webpack.optimize.UglifyJsPlugin()
+	],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
