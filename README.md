@@ -1,6 +1,7 @@
 # douban-app
 
 项目目录说明
+
 |-- config                           // 项目开发环境配置
 |   |-- index.js                     // 项目打包部署配置
 	|-- dev.env.js                //项目生产环境的部署
