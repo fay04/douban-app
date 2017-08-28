@@ -9,7 +9,9 @@ Vue.use(Vuex)
 const state = {
 	login: true,
 	hotmovies: [],
-	comingmovies: []
+	comingmovies: [],
+	chinaCities: [],
+	filterInfo: ''
 }
 
 export default new Vuex.Store({

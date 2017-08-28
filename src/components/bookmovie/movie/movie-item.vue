@@ -32,29 +32,29 @@
 
 <style lang="scss" scoped>
  .movie-item {
- 	width: 96px;
+ 	width: 4.8rem;
 	.title {
 	 	overflow: hidden;
 		text-overflow:ellipsis;
 		white-space: nowrap;
-		font-size: 12px;
+		font-size: .6rem;
 		font-weight: 700;
-		padding: 4px 0;
+		padding: .2rem 0;
 	}
 	.average-wrapper {
 		font-size: 0;
-		height: 15px;
+		height: .75rem;
 		& > * {
 			display: inline-block;
 			vertical-align: top;
 		}
 		p {
-			line-height: 15px;
-			font-size: 9px;
+			line-height: .75rem;
+			font-size: .45rem;
 		}
 	}
 	.favorite-wrapper {
-		font-size: 12px;
+		font-size: .6rem;
 		color: #8f8f8f;
 	}
  }

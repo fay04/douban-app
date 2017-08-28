@@ -15,7 +15,6 @@ const setpromise = data => {
 }
 
 //编译环境使用真实数据
-console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV == 'dev') {
 	/*热门电影*/
     var mHotMovies = () => fetch('get', 'v2/movie/in_theaters', {});
@@ -24,14 +23,16 @@ if (process.env.NODE_ENV == 'dev') {
     var getUser = () => fetch('get', '/v2/user', {});
 	var accountLogin = (username, password, captcha_code) => fetch('post', '/v2/login', {username, password, captcha_code});
 
+	var chinaCities = () => setpromise(city.chinaCities);
 	var hotCities = () => setpromise(city.hotCities);
 
 
-}else{
+} else {
 	var mHotMovies = (city, start, count) => setpromise(movie.mHotMovies);
 	var mComingMovies = (city, start, count) => setpromise(movie.mComingMovies);
 	var getUser = () => setpromise(login.userInfo);
 	var hotCities = () => setpromise(city.hotCities);
+	var chinaCities = () => setpromise(city.chinaCities);
 	var accountLogin = (username, password,captcha_code) => setpromise(login.userInfo)
 }
 
@@ -41,4 +42,4 @@ if (process.env.NODE_ENV == 'dev') {
  */
 
 var sendLogin = (code, mobile, validate_token) => setpromise(login.userInfo);
-export {mHotMovies,mComingMovies,getUser,accountLogin}
+export {mHotMovies,mComingMovies,getUser,accountLogin, hotCities, chinaCities}

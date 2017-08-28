@@ -7,8 +7,8 @@
 				</svg>
 			</div>
 			<h1 class="title">院线电影</h1>
-			<router-link to="/selectcity" class="fr">
-		   	<address >上海
+			<router-link to="/selectcity" class="">
+		   	    <address >上海
 					<div class="icon-small">
 						<svg class="icon" aria-hidden="true">
 						  <use xlink:href="#icon-arrow_down"></use>
@@ -22,9 +22,11 @@
 			<div class="nav-item" type="0" v-bind:class="{ active: type===0}">正在热映</div>
 			<div class="nav-item" type="1" v-bind:class="{ active: type===1}">即将上映</div>
 		</nav>
-		<div class="movies-list" v-if="movies && movies.subjects">
-			<div v-for="movie in movies.subjects">
-				<b-movie :movie="movie" :moviesType="type"></b-movie>
+		<div class="movies-list" v-if="movies && movies.subjects" ref="moviesWrapper">
+			<div>
+				<div v-for="movie in movies.subjects">
+					<b-movie :movie="movie" :moviesType="type"></b-movie>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -32,6 +34,7 @@
 
 <script type="text/ecmascript-6">
 	import { emit } from '../../../common/js/emit.js'
+	import BScroll from 'better-scroll'
 	import bMovie from './b_movie.vue'
 	import { mHotMovies, mComingMovies } from '../../../service/getData'
 
@@ -61,11 +64,23 @@
 					currentMovie().then(res => {
 						let movies = res
 						this.movies = movies
+						this._initScroll()
 					})
 				}
 			},
 			returnPage() {
 				this.$router.go(-1)
+			},
+			_initScroll() {
+				this.$nextTick(() => {
+					if (!this.moviesScroll) {
+						this.moviesScroll = new BScroll(this.$refs.moviesWrapper, {
+							click: true
+						})
+					} else {
+						this.moviesScroll.refresh()
+					}
+				})
 			}
 		},
 		mounted() {
@@ -79,9 +94,9 @@
 			}
 			currentMovie().then(res => {
 				let movies = res
-				this.movies = movies
+				this.movies = movies;
+				this._initScroll()
 			})
-
 		}
 	}
 </script>
@@ -96,11 +111,14 @@
 		width: 100%;
 		height: 100%;
 		background: #fff;
+	    display: flex;
+	    flex-direction: column;
 		.header {
+			display: flex;
 			color: #333333;
-			font-size: 20px;
-			line-height: 30px;
-			padding: 16px 20px;
+			font-size: .9rem;
+			height: 5.5rem;
+			padding: .8rem 1rem;
 			vertical-align: middle;
 			@include border-b-1px();
 			&>.icon {
@@ -112,14 +130,14 @@
 				display: inline-block;
 			}
 			.icon {
-				width: 20px;
-				height: 20px;
-				padding-right: 28px;
+				width: 1rem;
+				height: 1rem;
+				padding-right: .3rem;
 			}
 			.icon-small {
 				vertical-align: middle;
-				width: 12px;
-				height: 12px;
+				width: .6rem;
+				height: .6rem;
 				.icon {
 					width: 100%;
 					height: 100%;
@@ -130,25 +148,31 @@
 				font-style: normal;
 				font-weight: 100;
 				color:#333;
-				font-size: 16px;
+				font-size: .8rem;
+			}
+			.title {
+				flex: 1;
 			}
 		}
 		nav {
 			font-size: 0;
 			text-align: center;
-			line-height: 50px;
-			height: 52px;
 			@include border-b-1px();
 			.nav-item {
 				display: inline-block;
 				width: 50%;
-				font-size: 18px;
+				font-size: .7rem;
+				height: 2rem;
+				line-height: 2rem;
 				color: #8F8F8F;
 				&.active {
 					border-bottom: 2px solid #8F8F8F;
 					color: #333;
 				}
 			}
+		}
+		.movies-list {
+			overflow: hidden;
 		}
 	}
 </style>

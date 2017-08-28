@@ -60,8 +60,8 @@
  		display: inline-block;
  	}
  	.icon {
- 		width: 15px;
- 		height: 15px;
+ 		width: .75rem;
+ 		height: .75rem;
  	}
  }
 </style>

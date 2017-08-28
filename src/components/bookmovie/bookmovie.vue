@@ -37,15 +37,18 @@
    		</div>
    	</nav>
    	<keep-alive><router-view></router-view></keep-alive>
+
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-	import split from '../common/split.vue'
+	import split from '../../common/vue/split.vue'
+  import movies from './movie/movies.vue'
 	
 	export default {
    	components: {
-			split
+			split,
+			movies
 		}
 	}
 </script>
@@ -60,24 +63,26 @@
 			text-align: center;
 			font-weight: 700;
 			color: #3e3e3e;
-			font-size: 18px;
+			font-size: .9rem;
 			@include border-b-1px();
+			position:relative;
+			background:#fff;
 			.title {
-				height: 56px;
-				line-height: 56px;
+				height: 2.8rem;
+				line-height: 2.8rem;
 			}
 			.icon {
 				position: absolute;
-				width: 24px;
-				height: 24px;
+				width: 1.2rem;
+				height: 1.2rem;
 				color: $green;
 				top: 50%;
 				transform: translateY(-50%);
 				&.icon-search {
-					right: 80px;
+					right: 4rem;
 				}
 				&.icon-message {
-					right: 20px;
+					right: 1rem;
 				}
 			}
 		}
@@ -85,16 +90,22 @@
 			@include border-b-1px();
 			display: flex;
 			text-align: center;
+			z-index: 99;
+			background: #fff;
 			.nav-item {
 				position: relative;
 				flex: 1;
-				height: 40px;
-				line-height: 40px;
+				height: 2rem;
+				line-height: 2rem;
 				box-sizing: border-box;
 				bottom: 1px;
 				.active {
-					display: block;
 					border-bottom: 1px solid;
+				}
+				a {
+					font-size: .7rem;
+					display: block;
+					box-sizing: border-box;
 				}
 			}
 		}

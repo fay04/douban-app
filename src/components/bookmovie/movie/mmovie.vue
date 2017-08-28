@@ -2,11 +2,11 @@
   <div class="m-movie">
    <div class="title-wrapper">
   		<h2 class="title">{{moviesM.title}}</h2>
-  		<router-link :to="'/bookmovie/movie/buymovie/' + moviesM.type" class="more-btn">
+  			<router-link :to="'/bookmovie/buymovie/' + moviesM.type" class="more-btn">
 		   			更多
-  			<svg class="icon" aria-hidden="true">
-		      <use xlink:href="#icon-keyboard_arrow_right"></use>
-		    </svg>
+	  			<svg class="icon" aria-hidden="true">
+			      <use xlink:href="#icon-keyboard_arrow_right"></use>
+			    </svg>
 		  </router-link>
   		<!--<div  @click="selectMoreMovies" >
   			
@@ -26,6 +26,7 @@
 	  		</div>
   		</div>
   	</div>
+  	
   </div>
 </template>
 
@@ -106,33 +107,33 @@
 	
  .m-movie {
  	.title-wrapper {
- 		padding: 23px 16px;
+ 		padding: 1.15rem .8rem;
  		display:flex;
- 		height: 16px;
-    line-height: 16px;
+ 		height: .8rem;
+    line-height: .8rem;
  		.title {
- 			font-size: 18px;
+ 			font-size: .9rem;
  			font-weight: 700;
  			color: #474747;
  			flex: 0 0 auto;
  		}
  		.more-btn {
  			flex: 1;
- 			height: 24px;
- 			padding: 0 10px;
- 			line-height: 24px;
- 			font-size: 10px;
+ 			height: 1.2rem;
+ 			padding: 0 .5rem;
+ 			line-height: 1.2rem;
+ 			font-size: .6rem;
  			text-align: right;
  			color: $green;
  			.icon {
- 				width: 10px;
- 				height: 10px;
+ 				width: .6rem;
+ 				height: .6rem;
  				vertical-align: middle;
  			}
  		}
  	}
  	.movies-scroll {
- 		padding: 0 16px 20px;
+ 		padding: 0 .8rem 1rem;
  	}
  	.movies-wrapper {
  		display: flex;
@@ -140,17 +141,17 @@
  		white-space: nowrap;
  		.movie-item-wrapper {
  			position: relative;
- 			padding-right: 20px;
+ 			padding-right: 1rem;
 	 		&.coming {
-	 			padding-top: 20px;
+	 			padding-top: 1rem;
 	 		}
 	 		&.length.coming {
-	 			margin-top: 20px;
+	 			margin-top: 1rem;
 	 		}
  			&.length {
  				display: flex;
- 				width: 96px;
- 				height: 144px;
+ 				width: 4.8rem;
+ 				height: 7.2rem;
  				flex-direction: column;
  				justify-content: center;
  				align-content: center;
@@ -162,7 +163,7 @@
  					@include border-b-1px();
  					color: #8f8f8f;
  					padding-bottom: 4px;
- 					font-size: 12px;
+ 					font-size: .6rem;
  					&:last-child {
  						padding: 4px 0 0 0;
  						@include border-none();
@@ -175,16 +176,16 @@
  			top: 0;
  			left: 0;
  			width: 100%;
- 			height: 10px;
- 			line-height: 10px;
+ 			height: .5rem;
+ 			line-height: .5rem;
  			.text {
  				display: inline-block;
  				color: #8f8f8f;
- 				font-size: 10px;
+ 				font-size: .5rem;
  				padding: 0 2px;
  				background: #fff;
  				z-index: 3;
- 				margin-left: 8px;
+ 				margin-left: .4rem;
  			}
  			.line {
  				position: absolute;

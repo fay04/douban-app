@@ -1,5 +1,7 @@
 import {
-	GET_USERINFO
+	GET_USERINFO,
+	CHINA_CITIES,
+	FILTER_INFO
 } from './mutation-types.js'
 
 import {
@@ -26,5 +28,12 @@ export default {
 		} else {
 			state.userInfo = null;
 		}
+	},
+	[CHINA_CITIES](state, info) {
+		console.log(info)
+		state.chinaCities = info
+	},
+	[FILTER_INFO](state, info) {
+		state.filterInfo = info
 	},
 }

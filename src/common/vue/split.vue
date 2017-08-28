@@ -12,7 +12,7 @@
 <style lang="scss">
  .split {
  	width: 100%;
- 	height: 15px;
+ 	height: 0.75rem;
  	background: #f7f7f7;
  }
 </style>

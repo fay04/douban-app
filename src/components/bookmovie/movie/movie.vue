@@ -10,16 +10,15 @@
 				<h1 class="title">精选榜单</h1>
 			</div>
 		</div>
-  		<router-view name="buymovie"></router-view>
+  	<router-view name="buymovie"></router-view>
 	</div>
 </template>
 
 <script type="text/ecmascript-6">
 	import { emit } from '../../../common/js/emit.js'
-	import split from '../../common/split.vue'
+	import split from '../../../common/vue/split.vue'
 	import BScroll from 'better-scroll'
 	import mmovie from './mmovie.vue'
-    import movies from './movies.vue'
 
 	export default {
 		data() {
@@ -38,8 +37,7 @@
 		},
 		components: {
 			mmovie,
-			split,
-			movies
+			split
 		},
 		created() {
 			emit.$on('initscroll', this._initScroll)
@@ -66,18 +64,18 @@
 <style lang="scss" scoped>
 	.movie {
 		position: fixed;
-		top: 96px;
-		bottom: 56px;
+		top: 4.8rem;
+		bottom: 2.8rem;
 		left: 0;
 		width: 100%;
 		z-index: 2;
+		overflow: hidden;
 		background: #fff;
-		transform: translate(0, 0, 0);
 		.billboard-list {
-			padding: 18px;
+			padding: .9rem;
 			.title {
 				font-weight: 700;
-				font-size: 18px;
+				font-size: .9rem;
 			}
 		}
 	}

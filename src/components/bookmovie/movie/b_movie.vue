@@ -35,29 +35,30 @@
 <style lang="scss" scoped>
 	@import '../../../common/scss/common.scss';
 .b-movie {
-	padding: 20px 12px;
+	padding: 1rem .6rem;
  	@include border-b-1px();
  	display:flex;
  	align-items:center;
- 	font-size: 20px;
+ 	font-size: .8rem;
  	.movie-content {
- 		padding: 0 12px;
+ 		padding: 0 .6rem;
  		vertical-align: top;
  		flex: 1;
  		.title {
- 			padding-bottom: 10px;
+ 			padding-bottom: .5rem;
  			font-weight: 700;
  		}
  	}
  		.btn-buymovie {
  			display: inline-block;
+ 			padding-right: .2rem;
  			.empty-btn {
 	 			color: red;
-	 			padding: 10px 15px;
+	 			padding: .4rem .6rem;
 	 			border: 1px solid;
-	 			border-radius: 6px;
-	 			font-size: 14px;
-	 			height: 40px;
+	 			border-radius: .3rem;
+	 			font-size: .6rem;
+	 			height: 2rem;
 	 			box-sizing: border-box;
  			}
  		}

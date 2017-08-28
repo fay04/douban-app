@@ -30,7 +30,6 @@ export default {
 	    width: 100%;
 	    left: 0;
 	    background: #fff;
-	    z-index: 10;
 		}
 	}
 </style>

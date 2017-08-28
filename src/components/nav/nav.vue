@@ -56,16 +56,16 @@
  	text-align: center;
  	@include border-t-1px();
  	background: #fff;
- 	padding: 8px 0;
+ 	padding: .4rem 0;
  	.icon-item {
  		flex: 1;
  		color: #afafaf;
- 		font-size: 14px;
+ 		font-size: .7rem;
  		.icon {
- 			width: 18px;
- 			height: 18px;
- 			font-size: 18px;
- 			margin-bottom: 8px;
+ 			width: .9rem;
+ 			height: .9rem;
+ 			font-size: .9rem;
+ 			margin-bottom: .4rem;
  		}
  	}
  }

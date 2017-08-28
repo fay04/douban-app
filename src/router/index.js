@@ -53,6 +53,14 @@ export default new Router({
 					}]
 				},
 				{
+					path: 'buymovie/:type',
+					name: 'buymovie',
+					components: {
+						default: buymovie,
+						buymovie: buymovie
+					}
+				},
+				{
 					path: 'book',
 					component: book
 				},
